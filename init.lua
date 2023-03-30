@@ -51,6 +51,25 @@ return {
     servers = {
       -- "pyright"
     },
+    setup_handlers = {
+      -- add custom handler
+      rust_analyzer = function(_, opts)
+      local rt = require("rust-tools")
+
+        rt.setup(
+          {
+            server = {
+              on_attach = function(_, bufnr)
+                -- Hover actions
+                vim.keymap.set("n", "<C-i>", rt.hover_actions.hover_actions, { buffer = bufnr })
+                -- Code action groups
+                vim.keymap.set("n", "<C-e>", rt.code_action_group.code_action_group, { buffer = bufnr })
+              end,
+            } 
+          }
+        )
+      end,
+    },
   },
 
   -- Configure require("lazy").setup() options
@@ -68,17 +87,6 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
-    -- Set up custom filetypes
-    -- vim.filetype.add {
-    --   extension = {
-    --     foo = "fooscript",
-    --   },
-    --   filename = {
-    --     ["Foofile"] = "fooscript",
-    --   },
-    --   pattern = {
-    --     ["~/%.config/foo/.*"] = "fooscript",
-    --   },
-    -- }
+    -- Viter
   end,
 }
