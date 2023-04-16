@@ -25,26 +25,21 @@ return {
     -- quick save
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
     -- Viter
+    ["<C-space>"] = {
+      require("rust-tools").hover_actions.hover_actions,
+      desc = "Rust Hover Actions"
+    },
+    ["<leader>ø"] = { "<cmd>Navbuddy<cr>" }, -- change description but the same command
+    ["<leader>æ"] = {
+      function()
+        require("lsp_lines").toggle()
+      end,
+      desc = "Toggle lsp_lines"
+    },
     ["k"] = { function() vim.lsp.buf.hover() end, desc = "Hover symbol details" },
     ["__"] = { ":w<cr>", desc = "Save File" },
-    ["<C-Up>"] = { "<cmd>m-2<cr>", desc = "Moves line one up" },
-    ["<C-Down>"] = { "<cmd>m+<cr>", desc = "Moves line one Down" },
-    ["]"] = {
-      function()
-        vim.schedule(function()
-          require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1)
-        end)
-      end,
-      desc = "Next buffer",
-    },
-    ["["] = {
-      function()
-        vim.schedule(function()
-          require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1))
-        end)
-      end,
-      desc = "Previous buffer",
-    },
+    ["<S-Up>"] = { "<cmd>m-2<cr>", desc = "Moves line one up" },
+    ["<S-Down>"] = { "<cmd>m+<cr>", desc = "Moves line one Down" },
   },
   t = {
     -- setting a mapping to false will disable it

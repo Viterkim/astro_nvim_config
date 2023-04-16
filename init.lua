@@ -50,22 +50,6 @@ return {
     },
     setup_handlers = {
       -- add custom handler
-      rust_analyzer = function(_, opts)
-        local rt = require("rust-tools")
-
-        rt.setup(
-          {
-            server = {
-              on_attach = function(_, bufnr)
-                -- Hover actions
-                vim.keymap.set("n", "<C-i>", rt.hover_actions.hover_actions, { buffer = bufnr })
-                -- Code action groups
-                vim.keymap.set("n", "<C-e>", rt.code_action_group.code_action_group, { buffer = bufnr })
-              end,
-            }
-          }
-        )
-      end,
     },
   },
   -- Configure require("lazy").setup() options
@@ -82,5 +66,28 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    -- Frø rust fix
+    local dap = require "dap"
+
+    local events = require "neo-tree.events"
+    events.subscribe {
+      event = events.NEO_TREE_WINDOW_AFTER_CLOSE,
+      handler = function()
+        if require("dap").session() then
+          require("dapui").open {
+            reset = true
+          }
+        end
+      end
+    }
+    dap.listeners.before.event_initialized["place-neotree-edge"] = function()
+      vim.cmd ":Neotree close"
+      vim.cmd ":Neotree reveal"
+    end
+    dap.listeners.after.event_exited["reset-neotree"] = function()
+      vim.cmd ":Neotree focus"
+      vim.cmd "wincmd 30|"
+      vim.cmd "wincmd p"
+    end
   end,
 }
