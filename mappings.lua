@@ -29,6 +29,13 @@ return {
       require("rust-tools").hover_actions.hover_actions,
       desc = "Rust Hover Actions"
     },
+    -- vim.keymap.set('n', '<leader>cf', crates.show_features_popup, opts),
+    ["<leader>ct"] = {
+      function()
+        require("crates").show_features_popup()
+      end,
+      desc = "Show rust crate features",
+    },
     ["<leader>ø"] = { "<cmd>Navbuddy<cr>" }, -- change description but the same command
     ["<leader>æ"] = {
       function()
@@ -61,7 +68,7 @@ return {
   },
   i = {
     ["<C-s>"] = { "<esc>:w<cr>a", desc = "Save File" },
-    ["<C-t>"] = { "<<esc>:w<cr" },
+    ["<C-t>"] = { "<esc>:w<cr>" },
     ["__"] = { "<esc>:w<cr>", desc = "Save File + enter normal mode" },
   }
 }

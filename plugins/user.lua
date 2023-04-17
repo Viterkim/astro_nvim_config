@@ -37,4 +37,10 @@ return {
   {
     "ThePrimeagen/harpoon"
   },
+  {
+    "saecki/crates.nvim",
+    tag = "v0.3.0",
+    dependencies = { "nvim-lua/plenary.nvim", "nvim-cmp" },
+    opts = {},
+  },
 }
