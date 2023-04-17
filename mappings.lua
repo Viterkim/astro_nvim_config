@@ -36,19 +36,32 @@ return {
       end,
       desc = "Toggle lsp_lines"
     },
-    ["k"] = { function() vim.lsp.buf.hover() end, desc = "Hover symbol details" },
+    ["ø"] = {
+      function()
+        vim.lsp.buf.hover()
+      end,
+      desc = "Hover symbol details" },
     ["__"] = { ":w<cr>", desc = "Save File" },
     ["<S-Up>"] = { "<cmd>m-2<cr>", desc = "Moves line one up" },
     ["<S-Down>"] = { "<cmd>m+<cr>", desc = "Moves line one Down" },
+    -- Harpoon
+    ["<leader>h"] = false,
+    ["<leader>ha"] = {
+      function()
+        require("harpoon.mark").add_file()
+      end,
+      desc = "Harpoon add"
+    },
+    ["<leader>ht"] = {
+      function()
+        require("harpoon.ui").toggle_quick_menu()
+      end,
+      desc = "Harpoon overview"
+    },
   },
-  t = {
-    -- setting a mapping to false will disable it
-    -- ["<esc>"] = false,
-  },
-  -- Viter
   i = {
     ["<C-s>"] = { "<esc>:w<cr>a", desc = "Save File" },
-    ["<C-t>"] = { "<esc>" },
+    ["<C-t>"] = { "<<esc>:w<cr" },
     ["__"] = { "<esc>:w<cr>", desc = "Save File + enter normal mode" },
   }
 }

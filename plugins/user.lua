@@ -31,4 +31,10 @@ return {
   {
     "mg979/vim-visual-multi"
   },
+  {
+    "folke/tokyonight.nvim"
+  },
+  {
+    "ThePrimeagen/harpoon"
+  },
 }
