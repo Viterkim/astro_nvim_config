@@ -25,6 +25,7 @@ return {
     -- quick save
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
     -- Viter
+    ["<C-y>"] = { "<esc>$a;<esc>", desc = "Insert ; at end of line" },
     ["<C-space>"] = {
       require("rust-tools").hover_actions.hover_actions,
       desc = "Rust Hover Actions"
@@ -37,7 +38,7 @@ return {
     },
     ["<leader>id"] = {
       function()
-        vim.diagnostic.open_float() 
+        vim.diagnostic.open_float()
       end,
       desc = "Float diagnostics"
     },
@@ -78,6 +79,7 @@ return {
     },
   },
   i = {
+    ["<C-y>"] = { "<esc>$a;<esc>", desc = "Insert ; at end of line" },
     ["<C-s>"] = { "<esc>:w<cr>a", desc = "Save File" },
     ["<C-t>"] = { "<esc>:w<cr>" },
     ["__"] = { "<esc>:w<cr>", desc = "Save File + enter normal mode" },

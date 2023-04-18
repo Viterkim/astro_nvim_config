@@ -38,6 +38,12 @@ return {
     "ThePrimeagen/harpoon"
   },
   {
+    "kylechui/nvim-surround",
+    config = function()
+      require("nvim-surround").setup()
+    end,
+  },
+  {
     "saecki/crates.nvim",
     tag = "v0.3.0",
     dependencies = { "nvim-lua/plenary.nvim", "nvim-cmp" },
