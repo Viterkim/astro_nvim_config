@@ -4,6 +4,8 @@ A user configuration template for [AstroNvim](https://github.com/AstroNvim/Astro
 
 ## Inspiration
 Frø [Link](https://github.com/FrederikBRoth/AstroVim-Config)
+
+
 Kim [Link](https://github.com/IIamaseconds/astro_config)
 
 

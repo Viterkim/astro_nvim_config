@@ -29,7 +29,18 @@ return {
       require("rust-tools").hover_actions.hover_actions,
       desc = "Rust Hover Actions"
     },
-    -- vim.keymap.set('n', '<leader>cf', crates.show_features_popup, opts),
+    ["<leader>if"] = {
+      function()
+        vim.lsp.buf.code_action()
+      end,
+      desc = "LSP Fixes"
+    },
+    ["<leader>id"] = {
+      function()
+        vim.diagnostic.open_float() 
+      end,
+      desc = "Float diagnostics"
+    },
     ["<leader>ct"] = {
       function()
         require("crates").show_features_popup()
