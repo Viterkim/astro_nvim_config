@@ -22,14 +22,16 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
-    -- quick save
+
+    -- CTRL
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
-    -- Viter
     ["<C-y>"] = { "<esc>$a;<esc>", desc = "Insert ; at end of line" },
     ["<C-space>"] = {
       require("rust-tools").hover_actions.hover_actions,
       desc = "Rust Hover Actions"
     },
+
+    -- Space i
     ["<leader>if"] = {
       function()
         vim.lsp.buf.code_action()
@@ -40,8 +42,16 @@ return {
       function()
         vim.diagnostic.open_float()
       end,
-      desc = "Float diagnostics"
+      desc = "Float full diagnostics"
     },
+    ["<leader>ip"] = {
+      function()
+        require("telescope.builtin").diagnostics()
+      end,
+      desc = "Search diagnostics"
+    },
+
+    -- Space single button
     ["<leader>ct"] = {
       function()
         require("crates").show_features_popup()
@@ -55,14 +65,19 @@ return {
       end,
       desc = "Toggle lsp_lines"
     },
+
+    -- Keys
     ["ø"] = {
       function()
         vim.lsp.buf.hover()
       end,
       desc = "Hover symbol details" },
     ["__"] = { ":w<cr>", desc = "Save File" },
-    ["<S-Up>"] = { "<cmd>m-2<cr>", desc = "Moves line one up" },
-    ["<S-Down>"] = { "<cmd>m+<cr>", desc = "Moves line one Down" },
+
+    -- Does not work
+    -- ["<S-Up>"] = { "<cmd>m-2<cr>", desc = "Moves line one up" },
+    -- ["<S-Down>"] = { "<cmd>m+<cr>", desc = "Moves line one Down" },
+
     -- Harpoon
     ["<leader>h"] = false,
     ["<leader>ha"] = {
@@ -81,7 +96,7 @@ return {
   i = {
     ["<C-y>"] = { "<esc>$a;<esc>", desc = "Insert ; at end of line" },
     ["<C-s>"] = { "<esc>:w<cr>a", desc = "Save File" },
-    ["<C-t>"] = { "<esc>:w<cr>" },
-    ["__"] = { "<esc>:w<cr>", desc = "Save File + enter normal mode" },
+    ["<C-t>"] = { "<esc>", desc = "Enter normal mode" },
+    ["__"] = { "<esc>:w<cr>", desc = "Save File + Enter normal mode" },
   }
 }

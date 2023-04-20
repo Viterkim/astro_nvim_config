@@ -29,15 +29,6 @@ return {
     run = function() vim.fn["mkdp#util#install"]() end,
   },
   {
-    "mg979/vim-visual-multi"
-  },
-  {
-    "folke/tokyonight.nvim"
-  },
-  {
-    "ThePrimeagen/harpoon"
-  },
-  {
     "kylechui/nvim-surround",
     config = function()
       require("nvim-surround").setup()
@@ -48,5 +39,17 @@ return {
     tag = "v0.3.0",
     dependencies = { "nvim-lua/plenary.nvim", "nvim-cmp" },
     opts = {},
+  },
+  {
+    "mg979/vim-visual-multi"
+  },
+  {
+    "folke/tokyonight.nvim"
+  },
+  {
+    "ThePrimeagen/harpoon"
+  },
+  {
+    "ThePrimeagen/vim-be-good"
   },
 }
