@@ -4,7 +4,6 @@ return {
     config = function()
       require("scrollbar").setup()
     end,
-    lazy = false,
   },
   {
     "folke/todo-comments.nvim",
@@ -12,7 +11,6 @@ return {
     config = function()
       require("todo-comments").setup()
     end,
-    lazy = false,
   },
   {
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
@@ -36,9 +34,6 @@ return {
   },
   {
     "saecki/crates.nvim",
-    tag = "v0.3.0",
-    dependencies = { "nvim-lua/plenary.nvim", "nvim-cmp" },
-    opts = {},
   },
   {
     "mg979/vim-visual-multi"
@@ -51,5 +46,11 @@ return {
   },
   {
     "ThePrimeagen/vim-be-good"
+  },
+  {
+    "nvim-lua/plenary.nvim"
+  },
+  {
+    "nvim-pack/nvim-spectre"
   },
 }

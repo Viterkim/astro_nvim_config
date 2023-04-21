@@ -9,6 +9,9 @@ Frø [Link](https://github.com/FrederikBRoth/AstroVim-Config)
 Kim [Link](https://github.com/IIamaseconds/astro_config)
 
 
+Mads [Link](https://github.com/washer/astronvim_config)
+
+
 ## 🛠️ Installation
 
 #### Make a backup of your current nvim and shared folder

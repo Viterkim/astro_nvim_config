@@ -12,10 +12,9 @@ return {
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
-        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr)
-          require("astronvim.utils.buffer").close(
-            bufnr)
-        end)
+        require("astronvim.utils.status").heirline.buffer_picker(
+          function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
+        )
       end,
       desc = "Pick to close",
     },
@@ -26,77 +25,77 @@ return {
     -- CTRL
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
     ["<C-y>"] = { "<esc>$a;<esc>", desc = "Insert ; at end of line" },
+    ["<C-h>"] = {
+      function() require("lsp_lines").toggle() end,
+      desc = "Toggle lsp_lines",
+    },
     ["<C-space>"] = {
       require("rust-tools").hover_actions.hover_actions,
-      desc = "Rust Hover Actions"
+      desc = "Rust Hover Actions",
     },
 
     -- Space i
     ["<leader>if"] = {
-      function()
-        vim.lsp.buf.code_action()
-      end,
-      desc = "LSP Fixes"
+      function() vim.lsp.buf.code_action() end,
+      desc = "LSP Fixes",
     },
     ["<leader>id"] = {
-      function()
-        vim.diagnostic.open_float()
-      end,
-      desc = "Float full diagnostics"
+      function() vim.diagnostic.open_float() end,
+      desc = "Float full diagnostics",
     },
     ["<leader>ip"] = {
-      function()
-        require("telescope.builtin").diagnostics()
-      end,
-      desc = "Search diagnostics"
+      function() require("telescope.builtin").diagnostics() end,
+      desc = "Search diagnostics",
     },
 
     -- Space single button
     ["<leader>ct"] = {
-      function()
-        require("crates").show_features_popup()
-      end,
+      function() require("crates").show_features_popup() end,
       desc = "Show rust crate features",
     },
     ["<leader>ø"] = { "<cmd>Navbuddy<cr>" }, -- change description but the same command
-    ["<leader>æ"] = {
-      function()
-        require("lsp_lines").toggle()
-      end,
-      desc = "Toggle lsp_lines"
-    },
 
     -- Keys
     ["ø"] = {
-      function()
-        vim.lsp.buf.hover()
-      end,
-      desc = "Hover symbol details" },
+      function() vim.lsp.buf.hover() end,
+      desc = "Hover symbol details",
+    },
     ["__"] = { ":w<cr>", desc = "Save File" },
 
     -- Does not work
     -- ["<S-Up>"] = { "<cmd>m-2<cr>", desc = "Moves line one up" },
     -- ["<S-Down>"] = { "<cmd>m+<cr>", desc = "Moves line one Down" },
 
+    -- Spectre
+    ["<leader>,a"] = { '<cmd>lua require("spectre").open()<CR>', desc = "Spectre" },
+    ["<leader>,w"] = {
+      '<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
+      desc = "Spectre search current word",
+    },
+    ["<leader>,p"] = {
+      '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
+      desc = "Spectre current file",
+    },
+
     -- Harpoon
     ["<leader>h"] = false,
     ["<leader>ha"] = {
-      function()
-        require("harpoon.mark").add_file()
-      end,
-      desc = "Harpoon add"
+      function() require("harpoon.mark").add_file() end,
+      desc = "Harpoon add",
     },
     ["<leader>ht"] = {
-      function()
-        require("harpoon.ui").toggle_quick_menu()
-      end,
-      desc = "Harpoon overview"
+      function() require("harpoon.ui").toggle_quick_menu() end,
+      desc = "Harpoon overview",
     },
   },
   i = {
+    ["<C-h>"] = {
+      function() require("lsp_lines").toggle() end,
+      desc = "Toggle lsp_lines",
+    },
     ["<C-y>"] = { "<esc>$a;<esc>", desc = "Insert ; at end of line" },
     ["<C-s>"] = { "<esc>:w<cr>a", desc = "Save File" },
     ["<C-t>"] = { "<esc>", desc = "Enter normal mode" },
     ["__"] = { "<esc>:w<cr>", desc = "Save File + Enter normal mode" },
-  }
+  },
 }
