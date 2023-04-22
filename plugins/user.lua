@@ -20,7 +20,6 @@ return {
         virtual_text = false,
       })
     end,
-    event = "User Astrofile",
   },
   {
     "iamcco/markdown-preview.nvim",

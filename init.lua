@@ -87,9 +87,9 @@ return {
       vim.cmd ":Neotree close"
       vim.cmd ":Neotree reveal"
     end
-    dap.listeners.after.event_exited["reset-neotree"] = function()
+    dap.listeners.after.event_terminated["reset-neotree"] = function()
       vim.cmd ":Neotree focus"
-      vim.cmd "wincmd 30|"
+      vim.cmd "wincmd 25|"
       vim.cmd "wincmd p"
     end
   end,

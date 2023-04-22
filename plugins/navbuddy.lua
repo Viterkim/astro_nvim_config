@@ -18,15 +18,15 @@ return {
           border = "single", -- "rounded", "double", "solid", "none"
           -- or an array with eight chars building up the border in a clockwise fashion
           -- starting with the top-left corner. eg: { "╔", "═" ,"╗", "║", "╝", "═", "╚", "║" }.
-          size = "60%",
+          size = "80%",
           position = "50%",
           sections = {
             left = {
-              size = "20%",
+              size = "15%",
               border = nil -- You can set border style for each section individually as well.
             },
             mid = {
-              size = "40%",
+              size = "35%",
               border = nil
             },
             right = {

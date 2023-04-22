@@ -10,8 +10,11 @@ return {
             hide_gitignored = false,
             open_on_setup = true,
             open_on_setup_file = false
-          }
-        }
+          },
+        },
+        window = {
+            width = 25
+        },
       })
     end,
   },
