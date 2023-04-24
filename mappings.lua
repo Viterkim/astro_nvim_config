@@ -29,7 +29,8 @@ return {
     ["<C-space>"] = {
       require("rust-tools").hover_actions.hover_actions,
       desc = "Rust Hover Actions",
-    },
+    }, 
+    ["<C-ø>"] = { function() require("dap").terminate() end, desc = "Debugger: Stop" },
 
     -- Space i
     ["<leader>if"] = {
@@ -62,15 +63,16 @@ return {
       desc = "Hover symbol details",
     },
     ["__"] = { ":w<cr>", desc = "Save File" },
+    ["<Bs>"] = { "x", desc = "Delete" },
 
     -- Shift
     ["<S-Up>"] = { "<cmd>m-2<cr>", desc = "Moves line one up" },
     ["<S-Down>"] = { "<cmd>m+<cr>", desc = "Moves line one Down" },
-    ["<S-Left>"] = {
+    ["<S-l>"] = {
       "<cmd>:call vm#commands#add_cursor_up(0, 1)<cr>",
       desc = "Multicursor up"
     },
-    ["<S-Right>"] = {
+    ["<S-u>"] = {
       "<cmd>:call vm#commands#add_cursor_down(0, 1)<cr>",
       desc = "Multicursor down"
     },
@@ -99,9 +101,6 @@ return {
         end,
         desc = "Previous buffer"
     },
-    
-    -- Debugger
-    -- maps.n["<F17>"] = { function() require("dap").terminate() end, desc = "Debugger: Stop" } -- Shift+F5
 
     -- Harpoon
     ["<leader>h"] = false,
@@ -142,6 +141,10 @@ return {
     ["_("] = { "_", desc = "Underscore (single fix)" },
   },
   v = {
-    ["<Bs>"] = { "x", desc = "Delete" }
+    ["<C-t>"] = { "<esc>", desc = "Enter normal mode" },
+    ["__"] = { "<esc>:w<cr>", desc = "Save File + Enter normal mode" },
+    ["<Bs>"] = { "x", desc = "Delete" },
+    ["e"] = { "ygvd", desc = "Cut" },
+    ["c"] = { "ygv", desc = "Copy + Keep selection" },
   }
 }
