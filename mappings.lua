@@ -26,10 +26,6 @@ return {
     -- CTRL
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
     ["<C-y>"] = { "<esc>$a;<esc>", desc = "Insert ; at end of line" },
-    ["<C-h>"] = {
-      function() require("lsp_lines").toggle() end,
-      desc = "Toggle lsp_lines",
-    },
     ["<C-space>"] = {
       require("rust-tools").hover_actions.hover_actions,
       desc = "Rust Hover Actions",
@@ -54,8 +50,12 @@ return {
       function() require("crates").show_features_popup() end,
       desc = "Show rust crate features",
     },
-    ["<leader>ø"] = { "<cmd>Navbuddy<cr>" }, -- change description but the same command
- 
+    ["<leader>ø"] = { "<cmd>Navbuddy<cr>" },
+    ["<Leader>y"] = {
+      function() require("lsp_lines").toggle() end,
+      desc = "Toggle lsp_lines",
+    },
+
     -- Keys
     ["ø"] = {
       function() vim.lsp.buf.hover() end,
