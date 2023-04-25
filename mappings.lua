@@ -25,12 +25,17 @@ return {
     
     -- CTRL
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
-    ["<C-y>"] = { "<esc>$a;<esc>", desc = "Insert ; at end of line" },
+    ["<C-y>"] = {
+      function() require("lsp_lines").toggle() end,
+      desc = "Toggle lsp_lines",
+    },
+    ["<C-b>"] = { "<esc>$a;<esc>", desc = "Insert ; at end of line" },
     ["<C-space>"] = {
       require("rust-tools").hover_actions.hover_actions,
       desc = "Rust Hover Actions",
-    }, 
-    ["<C-ø>"] = { function() require("dap").terminate() end, desc = "Debugger: Stop" },
+    },
+    -- Does not work
+    ["<C-æ>"] = { function() require("dap").terminate() end, desc = "Debugger: Stop" },
 
     -- Space i
     ["<leader>if"] = {
@@ -45,17 +50,13 @@ return {
       function() require("telescope.builtin").diagnostics() end,
       desc = "Search diagnostics",
     },
-
-    -- Space single button
-    ["<leader>ct"] = {
+    ["<leader>ic"] = {
       function() require("crates").show_features_popup() end,
       desc = "Show rust crate features",
     },
+
+    -- Space single button
     ["<leader>ø"] = { "<cmd>Navbuddy<cr>" },
-    ["<Leader>y"] = {
-      function() require("lsp_lines").toggle() end,
-      desc = "Toggle lsp_lines",
-    },
 
     -- Keys
     ["ø"] = {
@@ -66,6 +67,7 @@ return {
     ["<Bs>"] = { "x", desc = "Delete" },
 
     -- Shift
+    -- TODO: up and down does not work on mac
     ["<S-Up>"] = { "<cmd>m-2<cr>", desc = "Moves line one up" },
     ["<S-Down>"] = { "<cmd>m+<cr>", desc = "Moves line one Down" },
     ["<S-l>"] = {
@@ -105,36 +107,40 @@ return {
     -- Harpoon
     ["<leader>h"] = false,
     ["<leader>ha"] = {
-      function() require("harpoon.mark").add_file() end,
-      desc = "Harpoon add",
-    },
-    ["<leader>ht"] = {
-      function() require("harpoon.ui").toggle_quick_menu() end,
-      desc = "Harpoon overview",
-    },
-    ["<leader>h1"] = {
       function() require("harpoon.ui").nav_file(1) end,
       desc = "Harpoon go to file 1",
     },
-    ["<leader>h2"] = {
+    ["<leader>hr"] = {
       function() require("harpoon.ui").nav_file(2) end,
       desc = "Harpoon go to file 2",
     },
-    ["<leader>h3"] = {
+    ["<leader>hs"] = {
       function() require("harpoon.ui").nav_file(3) end,
       desc = "Harpoon go to file 3",
     },
-    ["<leader>h4"] = {
+    ["<leader>ht"] = {
       function() require("harpoon.ui").nav_file(4) end,
       desc = "Harpoon go to file 4",
     },
+    ["<leader>hg"] = {
+      function() require("harpoon.ui").nav_file(4) end,
+      desc = "Harpoon go to file 5",
+    },
+    ["<leader>hq"] = {
+      function() require("harpoon.mark").add_file() end,
+      desc = "Harpoon add",
+    },
+    ["<leader>hw"] = {
+      function() require("harpoon.ui").toggle_quick_menu() end,
+      desc = "Harpoon overview",
+    },
   },
   i = {
-    ["<C-h>"] = {
+    ["<C-y>"] = {
       function() require("lsp_lines").toggle() end,
       desc = "Toggle lsp_lines",
     },
-    ["<C-y>"] = { "<esc>$a;<esc>:w<cr>", desc = "Insert ; at end of line" },
+    ["<C-b>"] = { "<esc>$a;<esc>:w<cr>", desc = "Insert ; at end of line" },
     ["<C-s>"] = { "<esc>:w<cr>a", desc = "Save File" },
     ["<C-t>"] = { "<esc>", desc = "Enter normal mode" },
     ["__"] = { "<esc>:w<cr>", desc = "Save File + Enter normal mode" },
