@@ -103,6 +103,7 @@ return {
         end,
         desc = "Previous buffer"
     },
+    -- TODO: switch between windows on t, up, down, left, right
 
     -- Harpoon
     ["<leader>h"] = false,
@@ -123,7 +124,7 @@ return {
       desc = "Harpoon go to file 4",
     },
     ["<leader>hg"] = {
-      function() require("harpoon.ui").nav_file(4) end,
+      function() require("harpoon.ui").nav_file(5) end,
       desc = "Harpoon go to file 5",
     },
     ["<leader>hq"] = {
