@@ -65,6 +65,7 @@ return {
     },
     ["__"] = { ":w<cr>", desc = "Save File" },
     ["<Bs>"] = { "x", desc = "Delete" },
+    ["de"] = { "<S-v>ygvd", desc = "Cut" },
 
     -- Shift
     -- TODO: up and down does not work on mac
@@ -91,13 +92,13 @@ return {
     },
 
     -- Tabs / Buffers
-    ["tt"] = {
+    ["st"] = {
         function()
             require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1)
         end,
         desc = "Next buffer"
     },
-    ["ts"] = {
+    ["ss"] = {
         function()
             require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1))
         end,
