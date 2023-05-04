@@ -145,6 +145,7 @@ return {
     ["<C-b>"] = { "<esc>$a;<esc>:w<cr>", desc = "Insert ; at end of line" },
     ["<C-s>"] = { "<esc>:w<cr>a", desc = "Save File" },
     ["<C-t>"] = { "<esc>", desc = "Enter normal mode" },
+    ["<C-p>"] = { "<esc>lp", desc = "Paste" },
     ["__"] = { "<esc>:w<cr>", desc = "Save File + Enter normal mode" },
     ["_("] = { "_", desc = "Underscore (single fix)" },
   },
