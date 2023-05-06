@@ -54,6 +54,7 @@ return {
       function() require("crates").show_features_popup() end,
       desc = "Show rust crate features",
     },
+    ["<leader>iy"] = { "<cmd>let @+=expand('%:~:.')<cr>", desc = "Copy relative path" },
 
     -- Space single button
     ["<leader>ø"] = { "<cmd>Navbuddy<cr>" },
