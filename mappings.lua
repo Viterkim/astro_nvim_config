@@ -50,11 +50,13 @@ return {
       function() require("telescope.builtin").diagnostics() end,
       desc = "Search diagnostics",
     },
-    ["<leader>ic"] = {
+    ["<leader>io"] = {
       function() require("crates").show_features_popup() end,
       desc = "Show rust crate features",
     },
     ["<leader>iy"] = { "<cmd>let @+=expand('%:~:.')<cr>", desc = "Copy relative path" },
+    -- This one doesn't work half the time
+    ["<leader>ix"] = { "<cmd>e ++ff=unix<cr>", desc = "Fix windows endlines" },
 
     -- Space single button
     ["<leader>ø"] = { "<cmd>Navbuddy<cr>" },
@@ -69,7 +71,6 @@ return {
     ["de"] = { "<S-v>ygvd", desc = "Cut" },
 
     -- Shift
-    -- TODO: up and down does not work on mac
     ["<S-Up>"] = { "<cmd>m-2<cr>", desc = "Moves line one up" },
     ["<S-Down>"] = { "<cmd>m+<cr>", desc = "Moves line one Down" },
     ["<S-l>"] = {
@@ -105,7 +106,6 @@ return {
         end,
         desc = "Previous buffer"
     },
-    -- TODO: switch between windows on t, up, down, left, right
 
     -- Harpoon
     ["<leader>h"] = false,
