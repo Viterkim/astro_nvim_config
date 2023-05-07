@@ -34,6 +34,7 @@ return {
       require("rust-tools").hover_actions.hover_actions,
       desc = "Rust Hover Actions",
     },
+
     -- Does not work
     ["<C-æ>"] = { function() require("dap").terminate() end, desc = "Debugger: Stop" },
 
