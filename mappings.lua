@@ -152,6 +152,12 @@ return {
     ["_("] = { "_", desc = "Underscore (single fix)" },
   },
   v = {
+    ["<S-Up>"] = { "<cmd>m-2<cr>", desc = "Moves line one up" },
+    ["<S-Down>"] = { "<cmd>m+<cr>", desc = "Moves line one Down" },
+    ["<C-y>"] = {
+      function() require("lsp_lines").toggle() end,
+      desc = "Toggle lsp_lines",
+    },
     ["<C-t>"] = { "<esc>", desc = "Enter normal mode" },
     ["__"] = { "<esc>:w<cr>", desc = "Save File + Enter normal mode" },
     ["<Bs>"] = { "x", desc = "Delete" },
