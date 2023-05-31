@@ -108,6 +108,27 @@ return {
         desc = "Previous buffer"
     },
 
+    -- Remote sshfs
+    -- ["<leader>rc"] = {
+    --   function() 
+    --     require("remote-sshfs.api").connect() 
+    --   end,
+    --   desc = "Remote Sshfs Connect",
+    -- },
+    -- ["<leader>rd"] = {
+    --   function() 
+    --     require("remote-sshfs.api").disconnect() 
+    --   end,
+    --   desc = "Remote Sshfs Disconnect",
+    -- },
+    -- ["<leader>re"] = {
+    --   function() 
+    --     require("remote-sshfs.api").edit()
+    --   end,
+    --   desc = "Remote Sshfs Edit",
+    -- },
+    -- TODO: add the api/builtin stuff in here for remote-ssh
+
     -- Harpoon
     ["<leader>h"] = false,
     ["<leader>ha"] = {

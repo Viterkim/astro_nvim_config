@@ -67,7 +67,7 @@ return {
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
     -- Styling
-    vim.cmd "set winblend=15"
+    vim.cmd "set winblend=10"
 
     -- Frø rust fix
     local dap = require "dap"
