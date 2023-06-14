@@ -69,9 +69,11 @@ return {
     -- Styling
     vim.cmd "set winblend=10"
 
-    -- Frø rust fix
-    local dap = require "dap"
+    -- Vim settings
+    vim.cmd "set formatoptions=" -- Don't keep making comments on newlines / auto split on too long sentences, like this one yesyes
 
+    -- Frø rust fix (reset neotree too default width)
+    local dap = require "dap"
     local events = require "neo-tree.events"
     events.subscribe {
       event = events.NEO_TREE_WINDOW_AFTER_CLOSE,

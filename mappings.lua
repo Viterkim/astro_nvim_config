@@ -34,6 +34,7 @@ return {
       require("rust-tools").hover_actions.hover_actions,
       desc = "Rust Hover Actions",
     },
+    ["<C-t>"] = { "<esc>", desc = "For spamming to get out of stuff(we are already in normal mode)" },
 
     -- Does not work
     ["<C-æ>"] = { function() require("dap").terminate() end, desc = "Debugger: Stop" },
@@ -151,11 +152,11 @@ return {
       function() require("harpoon.ui").nav_file(5) end,
       desc = "Harpoon go to file 5",
     },
-    ["<leader>hq"] = {
+    ["<leader>hw"] = {
       function() require("harpoon.mark").add_file() end,
       desc = "Harpoon add",
     },
-    ["<leader>hw"] = {
+    ["<leader>hf"] = {
       function() require("harpoon.ui").toggle_quick_menu() end,
       desc = "Harpoon overview",
     },

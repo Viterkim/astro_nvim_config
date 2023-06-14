@@ -41,6 +41,9 @@ return {
     "folke/tokyonight.nvim"
   },
   {
+    "lunarvim/templeos.nvim"
+  },
+  {
     "ThePrimeagen/harpoon"
   },
   {
