@@ -1,6 +1,12 @@
 # AstroNvim User Viter 
+[AstroNvim Github](https://github.com/AstroNvim/AstroNvim)
 
-A user configuration template for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
+
+[AstroNvim User Example](https://github.com/AstroNvim/user_example)
+
+
+[AstroNvim Default Mappings](https://astronvim.com/Basic%20Usage/mappings)
+
 
 ## Inspiration
 Frø [Link](https://github.com/FrederikBRoth/AstroVim-Config)
@@ -16,13 +22,6 @@ Alex [Link](https://github.com/alparty/astro_nvim_cfg)
 
 
 ## 🛠️ Installation
-
-#### Make a backup of your current nvim and shared folder
-
-```shell
-mv ~/.config/nvim ~/.config/nvim.bak
-mv ~/.local/share/nvim ~/.local/share/nvim.bak
-```
 
 #### Clone the repository
 
