@@ -39,7 +39,7 @@ return {
     -- Does not work
     ["<C-æ>"] = { function() require("dap").terminate() end, desc = "Debugger: Stop" },
 
-    -- Space i
+    -- Own leadea i
     ["<leader>if"] = {
       function() vim.lsp.buf.code_action() end,
       desc = "LSP Fixes",
@@ -47,6 +47,10 @@ return {
     ["<leader>id"] = {
       function() vim.diagnostic.open_float() end,
       desc = "Float full diagnostics",
+    },
+    ["<leader>ii"] = { 
+      function() require("telescope.builtin").diagnostics() end, 
+      desc = "All diagnostics" 
     },
     ["<leader>ip"] = {
       function() require("telescope.builtin").diagnostics() end,
