@@ -64,9 +64,6 @@ return {
     -- This one doesn't work half the time
     ["<leader>ix"] = { "<cmd>e ++ff=unix<cr>", desc = "Fix windows endlines" },
 
-    -- Space single button
-    ["<leader>ø"] = { "<cmd>Navbuddy<cr>" },
-
     -- Keys
     ["ø"] = {
       function() vim.lsp.buf.hover() end,

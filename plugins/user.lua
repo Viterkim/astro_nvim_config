@@ -19,10 +19,6 @@ return {
     end,
   },
   {
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  },
-  {
     "kylechui/nvim-surround",
     config = function()
       require("nvim-surround").setup()
@@ -41,13 +37,7 @@ return {
     "folke/tokyonight.nvim"
   },
   {
-    "lunarvim/templeos.nvim"
-  },
-  {
     "ThePrimeagen/harpoon"
-  },
-  {
-    "ThePrimeagen/vim-be-good"
   },
   {
     "nvim-lua/plenary.nvim"
