@@ -13,7 +13,7 @@ return {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
-      ensure_installed = { "eslint_d", "fixjson", "rustfmt@v1.5.1" },
+      ensure_installed = { "eslint_d", "fixjson" },
     },
   },
   {
