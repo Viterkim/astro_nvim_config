@@ -130,8 +130,8 @@ return {
     },
 
     -- Multiple Cursors
-    ["<C-l>"] = { "<Cmd>MultipleCursorsAddUp<CR>", desc = "Multi Cursor Add Up" },
-    ["<C-u>"] = { "<Cmd>MultipleCursorsAddDown<CR>", desc = "Multi Cursor Add Down" },
+    ["<S-l>"] = { "<Cmd>MultipleCursorsAddUp<CR>", desc = "Multi Cursor Add Up" },
+    ["<S-u>"] = { "<Cmd>MultipleCursorsAddDown<CR>", desc = "Multi Cursor Add Down" },
     ["<C-n>"] = { "<Cmd>MultipleCursorsAddBySearch<CR>", desc = "Multi Cursor By Search" },
     ["<C-m>"] = { "<Cmd>MultipleCursorsAddBySearchV<CR>", desc = "Multi Cursor By Search Limited" },
   },
