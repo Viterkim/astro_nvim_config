@@ -68,6 +68,7 @@ return {
       desc = "Hover symbol details",
     },
     ["__"] = { ":w<cr>", desc = "Save File" },
+    -- Doesn't seem to work
     ["<Bs>"] = { "x", desc = "Delete" },
     ["de"] = { "<S-v>ygvd", desc = "Cut" },
 

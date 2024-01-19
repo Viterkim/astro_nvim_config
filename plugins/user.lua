@@ -42,7 +42,7 @@ return {
     "nvim-lua/plenary.nvim"
   },
   {
-    "svermeulen/vim-cutlass",
+    "svermeulen/vim-cutlass"
   },
   {
     "nvim-pack/nvim-spectre"
