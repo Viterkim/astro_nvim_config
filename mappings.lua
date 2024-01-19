@@ -36,9 +36,6 @@ return {
     },
     ["<C-t>"] = { "<esc>", desc = "For spamming to get out of stuff(we are already in normal mode)" },
 
-    -- Does not work
-    ["<C-æ>"] = { function() require("dap").terminate() end, desc = "Debugger: Stop" },
-
     -- Own leadea i
     ["<leader>if"] = {
       function() vim.lsp.buf.code_action() end,
@@ -65,11 +62,13 @@ return {
     ["<leader>ix"] = { "<cmd>e ++ff=unix<cr>", desc = "Fix windows endlines" },
 
     -- Keys
+    ["p"] = { "P", desc = "Paste" },
     ["ø"] = {
       function() vim.lsp.buf.hover() end,
       desc = "Hover symbol details",
     },
     ["__"] = { ":w<cr>", desc = "Save File" },
+    -- Doesn't seem to work
     ["<Bs>"] = { "x", desc = "Delete" },
     ["de"] = { "<S-v>ygvd", desc = "Cut" },
 
@@ -111,56 +110,30 @@ return {
     },
 
     -- Remote sshfs
-    -- ["<leader>rc"] = {
-    --   function() 
-    --     require("remote-sshfs.api").connect() 
-    --   end,
-    --   desc = "Remote Sshfs Connect",
-    -- },
-    -- ["<leader>rd"] = {
-    --   function() 
-    --     require("remote-sshfs.api").disconnect() 
-    --   end,
-    --   desc = "Remote Sshfs Disconnect",
-    -- },
-    -- ["<leader>re"] = {
-    --   function() 
-    --     require("remote-sshfs.api").edit()
-    --   end,
-    --   desc = "Remote Sshfs Edit",
-    -- },
-    -- TODO: add the api/builtin stuff in here for remote-ssh
+    ["<leader>sc"] = {
+      function() 
+        require("remote-sshfs.api").connect() 
+      end,
+      desc = "Remote Sshfs Connect",
+    },
+    ["<leader>sd"] = {
+      function() 
+        require("remote-sshfs.api").disconnect() 
+      end,
+      desc = "Remote Sshfs Disconnect",
+    },
+    ["<leader>se"] = {
+      function() 
+        require("remote-sshfs.api").edit()
+      end,
+      desc = "Remote Sshfs Edit",
+    },
 
-    -- Harpoon
-    ["<leader>h"] = false,
-    ["<leader>ha"] = {
-      function() require("harpoon.ui").nav_file(1) end,
-      desc = "Harpoon go to file 1",
-    },
-    ["<leader>hr"] = {
-      function() require("harpoon.ui").nav_file(2) end,
-      desc = "Harpoon go to file 2",
-    },
-    ["<leader>hs"] = {
-      function() require("harpoon.ui").nav_file(3) end,
-      desc = "Harpoon go to file 3",
-    },
-    ["<leader>ht"] = {
-      function() require("harpoon.ui").nav_file(4) end,
-      desc = "Harpoon go to file 4",
-    },
-    ["<leader>hg"] = {
-      function() require("harpoon.ui").nav_file(5) end,
-      desc = "Harpoon go to file 5",
-    },
-    ["<leader>hw"] = {
-      function() require("harpoon.mark").add_file() end,
-      desc = "Harpoon add",
-    },
-    ["<leader>hf"] = {
-      function() require("harpoon.ui").toggle_quick_menu() end,
-      desc = "Harpoon overview",
-    },
+    -- Multiple Cursors
+    ["<C-l>"] = { "<Cmd>MultipleCursorsAddUp<CR>", desc = "Multi Cursor Add Up" },
+    ["<C-u>"] = { "<Cmd>MultipleCursorsAddDown<CR>", desc = "Multi Cursor Add Down" },
+    ["<C-n>"] = { "<Cmd>MultipleCursorsAddBySearch<CR>", desc = "Multi Cursor By Search" },
+    ["<C-m>"] = { "<Cmd>MultipleCursorsAddBySearchV<CR>", desc = "Multi Cursor By Search Limited" },
   },
   i = {
     ["<C-y>"] = {
@@ -187,5 +160,12 @@ return {
     ["<Bs>"] = { "x", desc = "Delete" },
     ["e"] = { "ygvd", desc = "Cut" },
     ["c"] = { "ygv", desc = "Copy + Keep selection" },
+    ["p"] = { "P", desc = "Paste" },
+
+    -- Multiple Cursors
+    ["<C-l>"] = { "<Cmd>MultipleCursorsAddUp<CR>", desc = "Multi Cursor Add Up" },
+    ["<C-u>"] = { "<Cmd>MultipleCursorsAddDown<CR>", desc = "Multi Cursor Add Down" },
+    ["<C-n>"] = { "<Cmd>MultipleCursorsAddBySearch<CR>", desc = "Multi Cursor By Search" },
+    ["<C-m>"] = { "<Cmd>MultipleCursorsAddBySearchV<CR>", desc = "Multi Cursor By Search Limited" },
   }
 }
