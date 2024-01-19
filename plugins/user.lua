@@ -31,19 +31,18 @@ return {
     end,
   },
   {
-    "mg979/vim-visual-multi"
+    "brenton-leighton/multiple-cursors.nvim",
+    version = "*", 
+    opts = {},  -- This causes the plugin setup function to be called
   },
   {
     "folke/tokyonight.nvim"
   },
   {
-    "ThePrimeagen/harpoon"
-  },
-  {
     "nvim-lua/plenary.nvim"
   },
   {
-    "svermeulen/vim-cutlass"
+    "svermeulen/vim-cutlass",
   },
   {
     "nvim-pack/nvim-spectre"

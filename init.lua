@@ -70,29 +70,30 @@ return {
     vim.cmd "set winblend=10"
 
     -- Vim settings
-    vim.cmd "set formatoptions=" -- Don't keep making comments on newlines / auto split on too long sentences, like this one yesyes
+    -- Doesn't work
+    -- vim.cmd "set formatoptions=" -- Don't keep making comments on newlines / auto split on too long sentences, like this one yesyes
 
     -- Frø rust fix (reset neotree too default width)
-    local dap = require "dap"
-    local events = require "neo-tree.events"
-    events.subscribe {
-      event = events.NEO_TREE_WINDOW_AFTER_CLOSE,
-      handler = function()
-        if require("dap").session() then
-          require("dapui").open {
-            reset = true
-          }
-        end
-      end
-    }
-    dap.listeners.before.event_initialized["place-neotree-edge"] = function()
-      vim.cmd ":Neotree close"
-      vim.cmd ":Neotree reveal"
-    end
-    dap.listeners.after.event_terminated["reset-neotree"] = function()
-      vim.cmd ":Neotree focus"
-      vim.cmd "wincmd 25|"
-      vim.cmd "wincmd p"
-    end
+    -- local dap = require "dap"
+    -- local events = require "neo-tree.events"
+    -- events.subscribe {
+    --   event = events.NEO_TREE_WINDOW_AFTER_CLOSE,
+    --   handler = function()
+    --     if require("dap").session() then
+    --       require("dapui").open {
+    --         reset = true
+    --       }
+    --     end
+    --   end
+    -- }
+    -- dap.listeners.before.event_initialized["place-neotree-edge"] = function()
+    --   vim.cmd ":Neotree close"
+    --   vim.cmd ":Neotree reveal"
+    -- end
+    -- dap.listeners.after.event_terminated["reset-neotree"] = function()
+    --   vim.cmd ":Neotree focus"
+    --   vim.cmd "wincmd 25|"
+    --   vim.cmd "wincmd p"
+    -- end
   end,
 }

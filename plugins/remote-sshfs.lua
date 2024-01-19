@@ -1,26 +1,25 @@
 return {
   {
     "nosduco/remote-sshfs.nvim",
-    lazy = false,
     config = function()
       local api = require('remote-sshfs.api')
 
-      local raspberryConfig = io.open('~/.ssh/sshfs.config');
-      if raspberryConfig == nil then
-        return;
-      end
-
       require('remote-sshfs').setup({
-        connections = {
-          ssh_configs = {
-            "~/.ssh/raspberry"
-          }
-        }
+        ui = {
+          confirm = {
+            connect = false, -- prompt y/n when host is selected to connect to
+            change_dir = false, -- prompt y/n to change working directory on connection (only applicable if handlers.on_connect.change_dir is enabled)
+          },
+        },
+        handlers = {
+            on_connect = {
+              change_dir = true, -- when connected change vim working directory to mount point
+            },
+            on_disconnect = {
+              clean_mount_folders = true, -- remove mount point folder on disconnect/unmount
+            },
+          },
       })
-
-      vim.keymap.set('n', '<leader>rc', api.connect, {})
-      vim.keymap.set('n', '<leader>rd', api.disconnect, {})
-      vim.keymap.set('n', '<leader>re', api.edit, {})
 
       -- (optional) Override telescope find_files and live_grep to make dynamic based on if connected to host
       local builtin = require("telescope.builtin")
