@@ -128,12 +128,6 @@ return {
       end,
       desc = "Remote Sshfs Edit",
     },
-
-    -- Multiple Cursors
-    ["<S-l>"] = { "<Cmd>MultipleCursorsAddUp<CR>", desc = "Multi Cursor Add Up" },
-    ["<S-u>"] = { "<Cmd>MultipleCursorsAddDown<CR>", desc = "Multi Cursor Add Down" },
-    ["<C-n>"] = { "<Cmd>MultipleCursorsAddBySearch<CR>", desc = "Multi Cursor By Search" },
-    ["<C-m>"] = { "<Cmd>MultipleCursorsAddBySearchV<CR>", desc = "Multi Cursor By Search Limited" },
   },
   i = {
     ["<C-y>"] = {
@@ -161,11 +155,5 @@ return {
     ["e"] = { "ygvd", desc = "Cut" },
     ["c"] = { "ygv", desc = "Copy + Keep selection" },
     ["p"] = { "P", desc = "Paste" },
-
-    -- Multiple Cursors
-    ["<C-l>"] = { "<Cmd>MultipleCursorsAddUp<CR>", desc = "Multi Cursor Add Up" },
-    ["<C-u>"] = { "<Cmd>MultipleCursorsAddDown<CR>", desc = "Multi Cursor Add Down" },
-    ["<C-n>"] = { "<Cmd>MultipleCursorsAddBySearch<CR>", desc = "Multi Cursor By Search" },
-    ["<C-m>"] = { "<Cmd>MultipleCursorsAddBySearchV<CR>", desc = "Multi Cursor By Search Limited" },
   }
 }

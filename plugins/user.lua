@@ -31,12 +31,10 @@ return {
     end,
   },
   {
-    "brenton-leighton/multiple-cursors.nvim",
-    version = "*", 
-    opts = {},  -- This causes the plugin setup function to be called
+    "mg979/vim-visual-multi",
   },
   {
-    "folke/tokyonight.nvim"
+    "folke/tokyonight.nvim",
   },
   {
     "nvim-lua/plenary.nvim"
@@ -47,4 +45,8 @@ return {
   {
     "nvim-pack/nvim-spectre"
   },
+  {
+    "AstroNvim/astrocommunity",
+    { import = "astrocommunity.pack.go" }
+  } 
 }
